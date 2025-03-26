@@ -1,0 +1,38 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #ffe6e6;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #ff4d4d;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar button {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 120px;
+    height: 50px;
+}
+
+.content {
+    margin-top: 50px;
+    font-size: 30px;
+    color: #3c0404;
+    font-weight: bold;
+}

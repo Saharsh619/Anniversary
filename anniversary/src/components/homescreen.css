@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #ffe6e6;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+
+.home-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.navbar button {
+    background: linear-gradient(135deg, #ffffbe, #ffcc70);
+    border: none;
+    padding: 60px;
+    color: white;
+    margin: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 30vw;
+    height: 30vw;
+    max-width: 300px;
+    max-height: 300px;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 
+        transform 0.3s ease-in-out, 
+        box-shadow 0.3s ease-in-out, 
+        background 0.3s ease-in-out, 
+        color 0.3s ease-in-out;
+}
+
+
+.navbar button::before {
+    content: "";
+    position: absolute;
+    inset: -4px; /* Slightly outside the button */
+    border-radius: 20px;
+    border: 3px solid transparent;
+    background: linear-gradient(135deg, rgba(255, 102, 153, 0.8), rgba(255, 204, 112, 0.8)) border-box;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.navbar button:hover::before {
+    opacity: 1;
+    animation: border-glow 1s linear forwards;
+}
+
+@keyframes border-glow {
+    0% {
+        border-image-source: linear-gradient(0deg, rgba(255, 102, 153, 0) 50%, rgba(255, 204, 112, 1) 50%);
+    }
+    25% {
+        border-image-source: linear-gradient(90deg, rgba(255, 102, 153, 0) 50%, rgba(255, 204, 112, 1) 50%);
+    }
+    50% {
+        border-image-source: linear-gradient(180deg, rgba(255, 102, 153, 0) 50%, rgba(255, 204, 112, 1) 50%);
+    }
+    75% {
+        border-image-source: linear-gradient(270deg, rgba(255, 102, 153, 0) 50%, rgba(255, 204, 112, 1) 50%);
+    }
+    100% {
+        border-image-source: linear-gradient(360deg, rgba(255, 102, 153, 1) 50%, rgba(255, 204, 112, 1) 50%);
+    }
+}
+
+
+.navbar button:hover {
+    transform: scale(1.1) rotate(3deg);
+    background: linear-gradient(135deg, #ffcc70, #ff6699);
+    box-shadow: 0 0 20px rgba(255, 102, 153, 0.7);
+    color: white;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+
+/* Anniversary Message */
+.content {
+    margin-bottom: 10vh;
+    font-size: 6vw;
+    color: #790909;
+    font-weight: bold;
+    /* font-family: "Dancing Script", cursive; */
+    font-family: "Dancing Script", cursive;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .navbar button {
+        width: 80px;
+        height: 80px;
+        font-size: 16px;
+        padding: 20px;
+    }
+    .content {
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+}
+
+/* Button Image Styling */
+.music-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content inside */
+    text-align: center; /* Ensure text aligns properly */
+    gap: 8px;
+    padding: 10px;
+}
+
+.buttonImage1 { 
+    width: 200px; /* Adjusted size */
+    height: 200px;
+}
+
+.buttonImage2 { 
+    width: 200px; /* Adjusted size */
+    height: 200px;
+}
+
+.surpriseText, .musicText, .photosText{
+    font-size: 1.3em;
+}
+
+
+
+
+.music-button:hover .photosText,
+.music-button:hover .musicText {
+    color: white;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.falling-flower {
+    position: fixed;
+    font-size: 30px;
+    bottom: -10vh;
+    z-index: 1000; /* Ensures it's on top of everything */
+    pointer-events: none; /* Prevents interaction issues */
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+
+

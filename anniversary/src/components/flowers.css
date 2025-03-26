@@ -1,0 +1,21 @@
+.falling-flower {
+    position: fixed; /* Keep it fixed to prevent scrolling issues */
+    bottom: 100vh; /* Start from above the screen */
+    font-size: 30px;
+    opacity: 0; /* Initially hidden */
+    animation: fallAnimation linear infinite;
+}
+
+/* Smooth Falling Animation */
+@keyframes fallAnimation {
+    0% {
+        transform: translateY(-100vh); /* Start from above the screen */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(120vh); /* Move far below the screen */
+        opacity: 0;
+    }
+}
+
+
